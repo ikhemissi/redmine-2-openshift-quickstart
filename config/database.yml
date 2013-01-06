@@ -1,0 +1,19 @@
+# Default setup is given for MySQL with ruby1.9. If you're running Redmine
+# with MySQL and ruby1.8, replace the adapter name with `mysql`.
+# Examples for PostgreSQL and SQLite3 can be found at the end.
+
+production:
+  adapter: mysql2
+  database: <%=ENV['OPENSHIFT_APP_NAME']%>
+  host: <%=ENV['OPENSHIFT_MYSQL_DB_HOST']%>
+  username: <%=ENV['OPENSHIFT_MYSQL_DB_USERNAME']%>
+  password: <%=ENV['OPENSHIFT_MYSQL_DB_PASSWORD']%>
+  encoding: utf8
+
+development:
+  adapter: mysql2
+  database: redmine_development
+  host: localhost
+  username: root
+  password: ""
+  encoding: utf8
